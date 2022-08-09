@@ -1,0 +1,9 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.catface.common.rest.autoconfig.HttpClientAutoConfiguration,\
+  com.catface.common.api.autoconfig.ApiAccessFilterAutoConfiguration,\
+  com.catface.common.mvc.autoconfig.LongToStringAutoConfiguration,\
+  com.catface.common.authority.autoconfig.AuthorityProcessorAutoConfiguration,\
+  com.catface.common.thread.autoconfig.ThreadPoolAutoConfiguration,\
+  com.catface.common.rest.autoconfig.RestTemplateAutoConfiguration,\
+  com.catface.common.dingding.autoconfig.DingDingClientAutoConfiguration
