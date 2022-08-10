@@ -63,16 +63,18 @@ public class ApiAccessFilter implements Filter {
 
         // 如果未开启日志拦截,直接跳过
         if (!httpApiProperties.getLogEnable()) {
+            log.debug("未开启api访问日志");
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }
 
-        // 非需要拦截的正则url,直接返回
+        // 非需要拦截正则url,直接返回
         HttpServletRequest request = (HttpServletRequest)servletRequest;
         HttpServletResponse response = (HttpServletResponse)servletResponse;
         String url = request.getRequestURI();
         String[] urlPattern = url.split("/");
         if (urlPattern.length <= 1) {
+            log.warn("url格式不符合拦截规则,不做日志拦截");
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }
@@ -82,6 +84,7 @@ public class ApiAccessFilter implements Filter {
         boolean needWriteLog = (urlPattern.length > 2) && (PUB_URL.equalsIgnoreCase(accessLevel) || PRIVATE_URL
             .equalsIgnoreCase(accessLevel));
         if (!needWriteLog) {
+            log.warn("当前url无需做日志拦截");
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }

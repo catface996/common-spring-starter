@@ -89,8 +89,7 @@
     <logger name="com.xxl.job" level="WARN"/>
 
     <springProfile name="local">
-        <logger name="com.wanmi" level="DEBUG"/>
-        <logger name="art.theone" level="DEBUG"/>
+        <logger name="com.catface" level="DEBUG"/>
         <root level="DEBUG">
             <appender-ref ref="STDOUT"/>
             <appender-ref ref="JSON_LOG"/>
@@ -98,8 +97,7 @@
     </springProfile>
 
     <springProfile name="dev">
-        <logger name="com.wanmi" level="DEBUG"/>
-        <logger name="art.theone" level="DEBUG"/>
+        <logger name="com.catface" level="DEBUG"/>
         <root level="DEBUG">
             <appender-ref ref="STDOUT"/>
             <appender-ref ref="JSON_LOG"/>
@@ -107,8 +105,7 @@
     </springProfile>
 
     <springProfile name="test">
-        <logger name="com.wanmi" level="DEBUG"/>
-        <logger name="art.theone" level="DEBUG"/>
+        <logger name="com.catface" level="DEBUG"/>
         <root level="DEBUG">
             <appender-ref ref="STDOUT"/>
             <appender-ref ref="JSON_LOG"/>
@@ -116,8 +113,7 @@
     </springProfile>
 
     <springProfile name="uat">
-        <logger name="com.wanmi" level="INFO"/>
-        <logger name="art.theone" level="INFO"/>
+        <logger name="com.catface" level="INFO"/>
         <root level="INFO">
             <appender-ref ref="STDOUT"/>
             <appender-ref ref="JSON_LOG"/>
@@ -125,16 +121,14 @@
     </springProfile>
 
     <springProfile name="gray">
-        <logger name="com.wanmi" level="INFO"/>
-        <logger name="art.theone" level="INFO"/>
+        <logger name="com.catface" level="INFO"/>
         <root level="INFO">
             <appender-ref ref="JSON_LOG"/>
         </root>
     </springProfile>
 
     <springProfile name="prod">
-        <logger name="com.wanmi" level="INFO"/>
-        <logger name="art.theone" level="INFO"/>
+        <logger name="com.catface" level="INFO"/>
         <root level="INFO">
             <appender-ref ref="JSON_LOG"/>
         </root>
