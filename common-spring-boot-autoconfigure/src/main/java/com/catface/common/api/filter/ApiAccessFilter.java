@@ -84,7 +84,7 @@ public class ApiAccessFilter implements Filter {
         boolean needWriteLog = (urlPattern.length > 2) && (PUB_URL.equalsIgnoreCase(accessLevel) || PRIVATE_URL
             .equalsIgnoreCase(accessLevel));
         if (!needWriteLog) {
-            log.warn("当前url无需做日志拦截");
+            log.debug("当前url无需做日志拦截");
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }
